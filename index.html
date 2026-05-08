@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f9ff;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background: #0f172a;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header p {
+            max-width: 700px;
+            margin: 0.5rem auto 0;
+            color: #cbd5e1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: #e2e8f0;
+        }
+
+        nav a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+            padding: 1.75rem;
+        }
+
+        h2 {
+            color: #0f172a;
+            margin-top: 0;
+        }
+
+        code {
+            background: #e2e8f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .highlight {
+            color: #0ea5e9;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Mundo do Docker</h1>
+        <p>Este repositório demonstra um site simples servido a partir de um container Docker usando Nginx.</p>
+    </header>
+
+    <nav>
+        <a href="#o-que-e-docker">O que é?</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#como-usar">Como usar</a>
+        <a href="#estrutura">Estrutura</a>
+        <a href="#recursos">Recursos</a>
+    </nav>
+
+    <main>
+        <section id="o-que-e-docker">
+            <h2>O que é Docker?</h2>
+            <p>Docker é uma plataforma de containerização que empacota aplicações e dependências em unidades leves e portáteis chamadas <span class="highlight">containers</span>. Cada container roda isoladamente, garantindo consistência entre desenvolvimento, testes e produção.</p>
+        </section>
+
+        <section id="beneficios">
+            <h2>Benefícios do Docker</h2>
+            <ul>
+                <li><strong>Portabilidade:</strong> Containers rodam da mesma forma em qualquer ambiente compatível com Docker.</li>
+                <li><strong>Isolamento:</strong> Dependências e configurações não se misturam entre aplicações.</li>
+                <li><strong>Escalabilidade:</strong> É fácil criar réplicas de containers para suportar mais tráfego.</li>
+                <li><strong>Desenvolvimento mais rápido:</strong> Ambiente consistente entre máquinas de desenvolvedor e servidores.</li>
+            </ul>
+        </section>
+
+        <section id="como-usar">
+            <h2>Como usar este projeto</h2>
+            <p>Este projeto contém um <code>Dockerfile</code> que copia todos os arquivos para a pasta do Nginx e serve este site estático automaticamente.</p>
+            <p>Comandos principais:</p>
+            <ul>
+                <li><code>docker build -t meu-site .</code> — cria a imagem Docker a partir do Dockerfile.</li>
+                <li><code>docker run -d -p 8080:80 meu-site</code> — executa o container e expõe o site na porta 8080.</li>
+                <li><code>docker ps</code> — mostra os containers em execução.</li>
+                <li><code>docker stop &lt;container-id&gt;</code> — para o container em execução.</li>
+            </ul>
+        </section>
+
+        <section id="estrutura">
+            <h2>Estrutura do repositório</h2>
+            <p>Este repositório contém apenas o essencial para servir uma página estática com Docker:</p>
+            <ul>
+                <li><strong><code>Dockerfile</code>:</strong> define a imagem base e copia os arquivos para o servidor Nginx.</li>
+                <li><strong><code>index.html</code>:</strong> conteúdo do site exibido pelo Nginx.</li>
+            </ul>
+            <p>Ao alterar <code>index.html</code>, basta reconstruir a imagem e reiniciar o container para ver as mudanças.</p>
+        </section>
+
+        <section id="recursos">
+            <h2>Recursos adicionais</h2>
+            <p>Continue aprendendo com estes links:</p>
+            <ul>
+                <li><a href="https://docs.docker.com/" target="_blank">Documentação oficial do Docker</a></li>
+                <li><a href="https://hub.docker.com/" target="_blank">Docker Hub</a> — repositório de imagens prontas.</li>
+                <li><a href="https://docker-curriculum.com/" target="_blank">Docker Curriculum</a> — tutorial passo a passo.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Introdução ao Docker. Criado por Arthur e Caio usando Docker.</p>
+    </footer>
+</body>
+</html>
